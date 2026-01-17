@@ -1,0 +1,199 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Page background */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Main container */
+div {
+    background: #ffffff;
+    width: 360px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Input field */
+#taskInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+#taskInput:focus {
+    border-color: #667eea;
+}
+
+/* Add button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    transition: 0.3s;
+}
+button:hover {
+    background: #5a67d8;
+}
+
+button::after {
+    content: "Add Task";
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+/* Task list */
+ul {
+    list-style: none;
+}
+
+/* Task item */
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: #e6e8ff;
+}
+
+/* Checkbox */
+li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Task text */
+li label {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Completed task */
+li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #888;
+}
+/* Scrollable task list */
+ul {
+    list-style: none;
+    max-height: 260px;          /* fixed height */
+    overflow-y: auto;           /* vertical scrollbar */
+    padding-right: 6px;
+}
+
+/* Custom scrollbar (Laptop style) */
+ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+
+/* Input focus animation */
+#taskInput {
+    transition: all 0.3s ease;
+}
+
+#taskInput:focus {
+    transform: scale(1.04);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Task item animation */
+li {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Hover pop-up effect */
+li:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Checkbox click effect */
+li input[type="checkbox"]:active {
+    transform: scale(1.2);
+}
+
+/* Task click pop-up effect */
+li label {
+    transition: all 0.3s ease;
+}
+
+li label:active {
+    transform: scale(1.1);
+    color: #667eea;
+}
+
+/* Completed task animation */
+li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #888;
+    animation: done 0.3s ease;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes done {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
